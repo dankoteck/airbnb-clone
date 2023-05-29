@@ -3,12 +3,12 @@ import {
   GlobeAltIcon,
   MagnifyingGlassIcon,
 } from "@heroicons/react/24/outline";
-import Logo from "~/assets/Logo";
+import Logo from "~/components/Logo";
 
 export default function AppBar() {
   return (
     <div className="hidden w-full bg-white border-b md:block border-b-slate-200">
-      <div className="gap-0 relative flex justify-between items-center py-4 overflow-hidden px-3.5 mx-auto lg:max-w-7xl">
+      <div className="gap-0 relative flex justify-between items-center py-4 overflow-hidden px-3.5 mx-auto lg:max-w-screen-2xl">
         <div className="lg:flex-grow flex-grow-0 flex-shrink lg:flex-shrink-0 basis-auto lg:basis-[140px]">
           <Logo />
         </div>

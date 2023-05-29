@@ -5,8 +5,8 @@ import {
 
 export default function AppBarMobile() {
   return (
-    <div className="max-w-3xl p-6 mx-auto">
-      <div className="flex items-center justify-between w-full p-2 bg-white border rounded-full shadow-lg border-slate-100 md:hidden">
+    <div className="max-w-3xl p-4 pb-0 mx-auto md:hidden">
+      <div className="flex items-center justify-between w-full p-2 bg-white border rounded-full shadow-md border-slate-100 md:hidden">
         <div className="flex items-center gap-2">
           <MagnifyingGlassIcon
             data-testid="magnifying-glass-icon"

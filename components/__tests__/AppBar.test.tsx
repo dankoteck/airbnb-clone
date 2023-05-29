@@ -5,14 +5,12 @@ describe("Introducing", () => {
   it("should have a Logo", () => {
     render(<AppBar />);
 
-    const label = screen.getByRole("img", {
-      name: /airbnb-logo/i,
-    });
+    const label = screen.getByTestId(/airbnb-logo/i);
 
     expect(label).toBeInTheDocument();
   });
 
-  it("should have a FiltersAndSearch component", () => {
+  it("should have a `FiltersAndSearch` component", () => {
     render(<AppBar />);
 
     const element = screen.getByRole("group", {
