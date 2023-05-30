@@ -9,7 +9,7 @@ const createJestConfig = nextJest({
 /** @type {import('jest').Config} */
 const config = {
   testEnvironment: "jest-environment-jsdom",
-  setupFilesAfterEnv: ["<rootDir>/jest.setup.js"],
+  setupFilesAfterEnv: ["<rootDir>/jest.setup.js", "jest-canvas-mock"],
   moduleNameMapper: {
     "^~/components/(.*)$": "<rootDir>/components/$1",
     "^~/features/(.*)$": "<rootDir>/features/$1",

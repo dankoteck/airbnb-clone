@@ -17,7 +17,7 @@ export default function Filter() {
   };
 
   const onCancel = () => {
-    setOpen(true);
+    setOpen(false);
   };
 
   return (
@@ -25,9 +25,10 @@ export default function Filter() {
       <button
         aria-label="Airbnb Filters"
         onClick={onOpen}
-        className="hidden md:w-[10%] md:flex items-center px-3.5 py-2.5 text-sm border rounded-xl border-slate-200"
+        // Reference for setting min-w-0 here: https://stackoverflow.com/a/66689926/9937322
+        className="hidden w-fit min-w-0 md:flex items-center justify-center px-3.5 py-2.5 text-sm border rounded-xl border-slate-200"
       >
-        <AdjustmentsHorizontalIcon className="w-5 h-5 mr-1.5" />
+        <AdjustmentsHorizontalIcon className="w-6 h-6 mr-1.5" />
         Filters
       </button>
 
@@ -40,8 +41,9 @@ export default function Filter() {
         okText="Show 5 homes"
         cancelText="Clear all"
       >
-        <TypeOfPlace />
-        {/* <PriceRange />
+        <div className="px-6">
+          <TypeOfPlace />
+          {/* <PriceRange />
         <RoomsAndBeds />
         <PropertyType />
         <Amenities />
@@ -49,6 +51,7 @@ export default function Filter() {
         <AccessibilityFeatures />
         <TopTierStays />
         <HostLanguague /> */}
+        </div>
       </Modal>
     </>
   );

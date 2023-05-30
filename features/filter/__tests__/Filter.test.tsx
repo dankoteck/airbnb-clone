@@ -1,21 +1,10 @@
-import { fireEvent, screen, waitFor } from "@testing-library/react";
+import { act, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 
-import { renderWithRedux } from "~/utils/test-utils";
+import { mockDelay, renderWithRedux } from "~/utils/test-utils";
 import Filter from "../Filter";
 
-describe("CategoryFilter", () => {
-  beforeEach(async () => {
-    renderWithRedux(<Filter />);
-
-    const button = screen.getByRole("button", {
-      name: /Airbnb Filters/i,
-    });
-
-    await waitFor(() => {
-      fireEvent.click(button);
-    });
-  });
-
+describe("Filter", () => {
   it("should render with default title", () => {
     renderWithRedux(<Filter />);
 
@@ -26,8 +15,14 @@ describe("CategoryFilter", () => {
     expect(element).toBeInTheDocument();
   });
 
-  it("should have `Clear all` button", () => {
+  it("should have `Clear all` button", async () => {
     renderWithRedux(<Filter />);
+
+    const button = screen.getByRole("button", {
+      name: /Airbnb Filters/i,
+    });
+
+    await userEvent.click(button);
 
     const title = screen.getByRole("button", {
       name: /Clear all/i,
@@ -36,8 +31,14 @@ describe("CategoryFilter", () => {
     expect(title).toBeInTheDocument();
   });
 
-  it("should have `Show n home` button", () => {
+  it("should have `Show n home` button", async () => {
     renderWithRedux(<Filter />);
+
+    const button = screen.getByRole("button", {
+      name: /Airbnb Filters/i,
+    });
+
+    await userEvent.click(button);
 
     const title = screen.getByRole("button", {
       name: /^Show \d+ home(s?)$/i,
@@ -46,14 +47,40 @@ describe("CategoryFilter", () => {
     expect(title).toBeInTheDocument();
   });
 
-  it("should have section `Type of place`", () => {
+  it("should have section `Type of place`", async () => {
     renderWithRedux(<Filter />);
+
+    const button = screen.getByRole("button", {
+      name: /Airbnb Filters/i,
+    });
+
+    await userEvent.click(button);
 
     const element = screen.getByRole("group", {
       name: /Type of place/i,
     });
 
     expect(element).toBeInTheDocument();
+  });
+
+  it('should close the filter when clicking on the "Close" button', async () => {
+    renderWithRedux(<Filter />);
+
+    const open = screen.getByRole("button", {
+      name: /Airbnb Filters/i,
+    });
+
+    // Open the filter modal
+    await userEvent.click(open);
+
+    const close = screen.getByRole("button", {
+      name: /Close Modal/i,
+    });
+
+    // Close the filter modal
+    await userEvent.click(close);
+
+    expect(close).not.toBeInTheDocument();
   });
 
   // it("should have section `Price range`", () => {

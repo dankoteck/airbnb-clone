@@ -72,6 +72,7 @@ export default function Modal({
                       <Dialog.Title className="flex items-center justify-between w-full h-16 px-6 font-semibold leading-6 text-center text-gray-900 border-b border-b-slate-200">
                         {closable && (
                           <button
+                            aria-label="Close Modal"
                             className="justify-self-start"
                             onClick={handleCancel}
                           >
@@ -83,7 +84,7 @@ export default function Modal({
                       </Dialog.Title>
 
                       {/* Contents */}
-                      <div className="px-6 mt-2">{children}</div>
+                      {children}
                     </div>
                   </div>
                 </div>

@@ -47,7 +47,8 @@ export default function CategorySlider({
   };
 
   return (
-    <div className="relative w-full md:w-[90%] px-4 md:p-0">
+    // Reference for setting min-w-0 here: https://stackoverflow.com/a/66689926/9937322
+    <div className="relative w-full min-w-0 px-4 md:p-0">
       <Swiper
         updateOnWindowResize
         slidesPerView={7}
