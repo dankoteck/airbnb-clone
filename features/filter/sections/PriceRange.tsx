@@ -53,7 +53,7 @@ function BarChart({
             : "rgba(156, 163, 175, .2)"
         ),
         data: barDataValues,
-        borderRadius: 3,
+        borderRadius: 2,
       },
     ],
   };
@@ -100,7 +100,7 @@ export default function PriceRange() {
 
   return (
     <div className="w-full py-8 border-t border-t-slate-200">
-      <h2 className="mb-8 text-2xl font-semibold">Price range</h2>
+      <h2 className="mb-6 text-2xl font-semibold">Price range</h2>
       <div className="max-w-[calc(42rem-28px)] mx-auto mb-12 max-h-20">
         <BarChart data={data} range={range} selected={selectedRange} />
         <Slider

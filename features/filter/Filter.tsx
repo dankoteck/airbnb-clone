@@ -5,6 +5,13 @@ import { useState } from "react";
 import Modal from "~/components/Modal";
 import TypeOfPlace from "./sections/TypeOfPlace";
 import PriceRange from "./sections/PriceRange";
+import RoomsAndBeds from "./sections/RoomsAndBeds";
+import PropertyType from "./sections/PropertyType";
+import Amenities from "./sections/Amentites";
+import BookingOptions from "./sections/BookingOptions";
+import AccessibilityFeatures from "./sections/AccessibilityFeatures";
+import TopTierStays from "./sections/TopTierStays";
+import HostLanguage from "./sections/HostLanguage";
 
 export default function Filter() {
   const [open, setOpen] = useState(false);
@@ -42,17 +49,16 @@ export default function Filter() {
         okText="Show 5 homes"
         cancelText="Clear all"
       >
-        <div className="px-6">
+        <div className="px-6 overflow-y-auto max-h-[700px]">
           <TypeOfPlace />
           <PriceRange />
-          {/*}
-        <RoomsAndBeds />
-        <PropertyType />
-        <Amenities />
-        <BookingOptions />
-        <AccessibilityFeatures />
-        <TopTierStays />
-        <HostLanguague /> */}
+          <RoomsAndBeds />
+          <PropertyType />
+          <Amenities />
+          <BookingOptions />
+          <AccessibilityFeatures />
+          <TopTierStays />
+          <HostLanguage />
         </div>
       </Modal>
     </>
