@@ -1,6 +1,6 @@
-import { act, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { mockDelay, renderWithRedux } from "~/utils/test-utils";
+import { renderWithRedux } from "~/utils/test-utils";
 import TypeOfPlace from "../TypeOfPlace";
 
 describe("TypeOfPlace", () => {
@@ -37,15 +37,11 @@ describe("TypeOfPlace", () => {
   it("should change the type of place when clicking on the option", async () => {
     renderWithRedux(<TypeOfPlace />);
 
-    const element = screen.getByRole("button", {
+    const element = await screen.findByRole("button", {
       name: /Rooms/i,
     });
 
-    act(() => {
-      userEvent.click(element);
-    });
-
-    await mockDelay(500);
+    await userEvent.click(element);
 
     expect(element).toHaveClass("bg-black");
   });

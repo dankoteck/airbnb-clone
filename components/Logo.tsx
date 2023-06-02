@@ -1,6 +1,6 @@
 "use client";
 
-import { useWindowSize } from "~/hooks/windowSize";
+import { useWindowSize } from "~/hooks/useWindowSize";
 
 export default function Logo() {
   const { width } = useWindowSize();

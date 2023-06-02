@@ -3,8 +3,8 @@ import userEvent from "@testing-library/user-event";
 import { act } from "react-dom/test-utils";
 
 import categories from "~/data/categories";
-import CategorySlider from "../CategorySlider";
 import { mockDelay } from "~/utils/test-utils";
+import CategorySlider from "../CategorySlider";
 
 describe("CategorySlider", () => {
   it("should have two arrows", () => {
@@ -32,26 +32,18 @@ describe("CategorySlider", () => {
       name: /Next slide/i,
     });
 
-    act(() => {
-      userEvent.click(nextArrow);
-    });
+    await userEvent.click(nextArrow);
 
-    await mockDelay(500);
-
-    expect(jestFn).toHaveBeenCalledTimes(1);
+    waitFor(() => expect(jestFn).toHaveBeenCalledTimes(1));
 
     // Assert when clicking prev arrow
     const prevArrow = screen.getByRole("button", {
       name: /Previous slide/i,
     });
 
-    act(() => {
-      userEvent.click(prevArrow);
-    });
+    await userEvent.click(prevArrow);
 
-    await mockDelay(500);
-
-    expect(jestFn).toHaveBeenCalledTimes(2); // 1 for next arrow, 1 for prev arrow
+    waitFor(() => expect(jestFn).toHaveBeenCalledTimes(2)); // 1 for next arrow, 1 for prev arrow
   });
 
   it("should render all `categories` list", () => {

@@ -34,3 +34,17 @@ export const mockDelay = (delay: number): Promise<string> =>
   new Promise((resolve) => {
     setTimeout(resolve, delay);
   });
+
+type SetStateMock<S> = (newState: S | ((prevState: S) => S)) => void;
+
+export function mockUseState<T>(initialState: T): [T, SetStateMock<T>] {
+  let state: T = initialState;
+  const setState: SetStateMock<T> = (newState) => {
+    if (typeof newState === "function") {
+      state = (newState as (prevState: T) => T)(state);
+    } else {
+      state = newState;
+    }
+  };
+  return [state, setState];
+}

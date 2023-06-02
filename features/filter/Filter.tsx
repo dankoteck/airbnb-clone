@@ -4,6 +4,7 @@ import { AdjustmentsHorizontalIcon } from "@heroicons/react/24/outline";
 import { useState } from "react";
 import Modal from "~/components/Modal";
 import TypeOfPlace from "./sections/TypeOfPlace";
+import PriceRange from "./sections/PriceRange";
 
 export default function Filter() {
   const [open, setOpen] = useState(false);
@@ -43,7 +44,8 @@ export default function Filter() {
       >
         <div className="px-6">
           <TypeOfPlace />
-          {/* <PriceRange />
+          <PriceRange />
+          {/*}
         <RoomsAndBeds />
         <PropertyType />
         <Amenities />

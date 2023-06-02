@@ -1,7 +1,5 @@
-"use client";
-
 import { useAppDispatch, useAppSelector } from "~/store";
-import { selectFilter, setTypeOfPlace } from "../filterSlice";
+import { selectFilter, updateTypeOfPlace } from "../filterSlice";
 import { LottieOptions, useLottie } from "lottie-react";
 import allOfBuildings from "~/assets/lotties/all-types.json";
 import rooms from "~/assets/lotties/rooms.json";
@@ -50,7 +48,7 @@ export default function TypeOfPlace() {
   const { View } = useLottie(options);
 
   const handleChangeType = (value: typeof typeOfPlace) => {
-    dispatch(setTypeOfPlace(value));
+    dispatch(updateTypeOfPlace(value));
   };
 
   return (
@@ -67,9 +65,7 @@ export default function TypeOfPlace() {
             <div
               role="button"
               key={type.value}
-              onClick={() =>
-                handleChangeType(type.value as typeof typeOfPlace)
-              }
+              onClick={() => handleChangeType(type.value as typeof typeOfPlace)}
               aria-label={type.label}
               className={`${
                 typeOfPlace === type.value

@@ -1,6 +1,6 @@
-import { act, renderHook } from "@testing-library/react";
+import { act, renderHook, waitFor } from "@testing-library/react";
 import { mockDelay } from "~/utils/test-utils";
-import { useWindowSize } from "../windowSize";
+import { useWindowSize } from "../useWindowSize";
 
 describe("windowSize", () => {
   it("should return default window size", () => {
@@ -14,19 +14,13 @@ describe("windowSize", () => {
   });
 
   it("should return resized width & height", async () => {
-    const debounceDelay = 500;
     const { result } = renderHook(() => useWindowSize());
 
     act(() => {
       window.resizeTo(500, 500);
     });
 
-    await mockDelay(debounceDelay);
-
-    const { current } = result;
-    const { width, height } = current;
-
-    expect(width).toBe(500);
-    expect(height).toBe(500);
+    await waitFor(() => expect(result.current.width).toBe(500));
+    await waitFor(() => expect(result.current.height).toBe(500));
   });
 });
