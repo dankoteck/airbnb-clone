@@ -9,7 +9,6 @@ import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 
 import { filterSlice } from "~/features/Filter/filterSlice";
 
-
 export const rootReducer = combineReducers({
   [filterSlice.name]: filterSlice.reducer,
 });
