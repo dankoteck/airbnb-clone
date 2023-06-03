@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { BsCheck } from "react-icons/bs";
 import Switch from "~/components/Switch";
 
 type Props = {
@@ -25,10 +24,7 @@ export default function SwitchList({ title, data }: Props) {
           className="flex justify-between"
           key={option.label}
         >
-          <div
-            aria-label="Option details"
-            className="flex flex-col font-light"
-          >
+          <div aria-label="Option details" className="flex flex-col font-light">
             <span className="text-base">{option.label}</span>
             <span className="text-sm text-gray-500">{option.description}</span>
             {option.moreInfoLink && (

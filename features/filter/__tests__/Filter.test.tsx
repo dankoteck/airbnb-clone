@@ -1,8 +1,8 @@
-import { act, screen, waitFor } from "@testing-library/react";
+import { screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import { renderWithRedux } from "~/utils/test-utils";
-import Filter from "../Filter";
+import Filter from "..";
 
 describe("Filter", () => {
   it("should open the modal when the button is clicked", async () => {

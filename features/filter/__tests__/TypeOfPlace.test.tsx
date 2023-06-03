@@ -1,4 +1,4 @@
-import { screen } from "@testing-library/react";
+import { screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { renderWithRedux } from "~/utils/test-utils";
 import TypeOfPlace from "../TypeOfPlace";
@@ -43,6 +43,6 @@ describe("TypeOfPlace", () => {
 
     await userEvent.click(element);
 
-    expect(element).toHaveClass("bg-black");
+    await waitFor(() => expect(element).toHaveClass("bg-black"));
   });
 });

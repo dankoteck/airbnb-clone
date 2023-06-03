@@ -1,34 +1,36 @@
-import {
-  GiBowlingStrike,
-  GiCampingTent,
-  GiCastle,
-  GiFarmTractor,
-  GiIsland,
-  GiPalmTree,
-  GiTreehouse,
-  GiWatchtower,
-  GiWindmill,
-  GiWoodCabin,
-} from "react-icons/gi";
-import {
-  TbBed,
-  TbBuildingPavilion,
-  TbCactus,
-  TbChefHat,
-  TbMountain,
-  TbSailboat,
-  TbUfo,
-} from "react-icons/tb";
-import {
-  MdHouseboat,
-  MdOutlineBlinds,
-  MdOutlineColorLens,
-  MdOutlineFreeBreakfast,
-  MdOutlineSurfing,
-} from "react-icons/md";
-import { BsBuildings, BsFire, BsWater } from "react-icons/bs";
-import { HiOutlineHomeModern } from "react-icons/hi2";
-import { FaSwimmingPool, FaUmbrellaBeach } from "react-icons/fa";
+import { GiBowlingStrike } from "@react-icons/all-files/gi/GiBowlingStrike";
+import { GiCampingTent } from "@react-icons/all-files/gi/GiCampingTent";
+import { GiCastle } from "@react-icons/all-files/gi/GiCastle";
+import { GiFarmTractor } from "@react-icons/all-files/gi/GiFarmTractor";
+import { GiIsland } from "@react-icons/all-files/gi/GiIsland";
+import { GiPalmTree } from "@react-icons/all-files/gi/GiPalmTree";
+import { GiTreeDoor } from "@react-icons/all-files/gi/GiTreeDoor";
+import { GiWatchtower } from "@react-icons/all-files/gi/GiWatchtower";
+import { GiWindmill } from "@react-icons/all-files/gi/GiWindmill";
+import { GiWoodCabin } from "@react-icons/all-files/gi/GiWoodCabin";
+
+import { BiBuildingHouse } from "@react-icons/all-files/bi/BiBuildingHouse";
+import { GiBed } from "@react-icons/all-files/gi/GiBed";
+import { GiCactusPot } from "@react-icons/all-files/gi/GiCactusPot";
+import { GiChefToque } from "@react-icons/all-files/gi/GiChefToque";
+import { GiMountaintop } from "@react-icons/all-files/gi/GiMountaintop";
+import { GiShoonerSailboat } from "@react-icons/all-files/gi/GiShoonerSailboat";
+import { GiUfo } from "@react-icons/all-files/gi/GiUfo";
+
+import { MdHouseboat } from "@react-icons/all-files/md/MdHouseboat";
+import { MdOutlineBlinds } from "@react-icons/all-files/md/MdOutlineBlinds";
+import { MdOutlineColorLens } from "@react-icons/all-files/md/MdOutlineColorLens";
+import { MdOutlineFreeBreakfast } from "@react-icons/all-files/md/MdOutlineFreeBreakfast";
+import { MdOutlineSurfing } from "@react-icons/all-files/md/MdOutlineSurfing";
+
+import { BsBuildings } from "@react-icons/all-files/bs/BsBuildings";
+import { BsFire } from "@react-icons/all-files/bs/BsFire";
+import { BsWater } from "@react-icons/all-files/bs/BsWater";
+
+import { HiOutlineHomeModern } from "@react-icons/all-files/hi2/HiOutlineHomeModern";
+
+import { FaSwimmingPool } from "@react-icons/all-files/fa/FaSwimmingPool";
+import { FaUmbrellaBeach } from "@react-icons/all-files/fa/FaUmbrellaBeach";
 
 const categories = [
   {
@@ -39,7 +41,7 @@ const categories = [
   {
     label: "Rooms",
     href: "/rooms",
-    icon: TbBed,
+    icon: GiBed,
   },
   {
     label: "Amazing views",
@@ -74,7 +76,7 @@ const categories = [
   {
     label: "OMG!",
     href: "/omg",
-    icon: TbUfo,
+    icon: GiUfo,
   },
   {
     label: "Bed & breakfasts",
@@ -94,12 +96,12 @@ const categories = [
   {
     label: "Treehouses",
     href: "/treehouses",
-    icon: GiTreehouse,
+    icon: GiTreeDoor,
   },
   {
     label: "Top of the world",
     href: "/top-of-the-world",
-    icon: TbMountain,
+    icon: GiMountaintop,
   },
   {
     label: "Trending",
@@ -144,12 +146,12 @@ const categories = [
   {
     label: "Boats",
     href: "/boats",
-    icon: TbSailboat,
+    icon: GiShoonerSailboat,
   },
   {
     label: "Chef's kitchens",
     href: "/chefs-kitchens",
-    icon: TbChefHat,
+    icon: GiChefToque,
   },
   {
     label: "Surfing",
@@ -159,12 +161,12 @@ const categories = [
   {
     label: "Desert",
     href: "/Desert",
-    icon: TbCactus,
+    icon: GiCactusPot,
   },
   {
     label: "Historical homes",
     href: "/historical-homes",
-    icon: TbBuildingPavilion,
+    icon: BiBuildingHouse,
   },
   {
     label: "Beach",

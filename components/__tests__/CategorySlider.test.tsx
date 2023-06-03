@@ -1,9 +1,7 @@
 import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import { act } from "react-dom/test-utils";
 
 import categories from "~/data/categories";
-import { mockDelay } from "~/utils/test-utils";
 import CategorySlider from "../CategorySlider";
 
 describe("CategorySlider", () => {

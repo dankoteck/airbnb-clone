@@ -4,6 +4,7 @@ import { default as bookingOptionsData } from "./bookingOptions";
 import { default as hostLanguagesData } from "./hostLanguages";
 import { default as topTierStaysData } from "./topTierStays";
 import { default as propertyTypeData } from "./propertyType";
+import { default as mocksData } from "./mocks";
 
 export {
   accessibilityFeaturesData,
@@ -12,4 +13,5 @@ export {
   hostLanguagesData,
   topTierStaysData,
   propertyTypeData,
+  mocksData,
 };

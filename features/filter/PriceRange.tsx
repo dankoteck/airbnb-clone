@@ -2,9 +2,7 @@ import {
   BarElement,
   CategoryScale,
   Chart as ChartJS,
-  LineElement,
   LinearScale,
-  PointElement,
 } from "chart.js";
 import { ChangeEvent, Fragment } from "react";
 import { Bar } from "react-chartjs-2";
@@ -12,13 +10,7 @@ import { Handles, Rail, Slider, Tracks } from "react-compound-slider";
 import OutlinedInput from "~/components/OutlinedInput";
 import { usePriceRange } from "~/hooks/usePriceRange";
 
-ChartJS.register(
-  BarElement,
-  CategoryScale,
-  LinearScale,
-  PointElement,
-  LineElement
-);
+ChartJS.register(BarElement, CategoryScale, LinearScale);
 
 function BarChart({
   data,

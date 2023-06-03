@@ -2,7 +2,7 @@
 
 import { Dialog, Transition } from "@headlessui/react";
 import { Fragment, MouseEvent, ReactElement, useRef } from "react";
-import { AiOutlineClose } from "react-icons/ai";
+import { AiOutlineClose } from "@react-icons/all-files/ai/AiOutlineClose";
 
 export default function Modal({
   open,
@@ -39,7 +39,7 @@ export default function Modal({
     <Transition.Root show={open} as={Fragment}>
       <Dialog
         as="div"
-        className="relative z-10 w-[780px]"
+        className="relative z-30 w-[780px]"
         onClose={handleCancel}
       >
         <Transition.Child
@@ -54,7 +54,7 @@ export default function Modal({
           <div className="fixed inset-0 transition-opacity bg-gray-500 bg-opacity-75" />
         </Transition.Child>
 
-        <div className="fixed inset-0 z-10">
+        <div className="fixed inset-0 z-30">
           <div className="flex items-end justify-center p-4 text-center sm:items-center sm:p-0">
             <Transition.Child
               as={Fragment}

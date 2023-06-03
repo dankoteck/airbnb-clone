@@ -7,7 +7,7 @@ import {
 } from "@reduxjs/toolkit";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 
-import { filterSlice } from "~/features/filter/filterSlice";
+import { filterSlice } from "~/features/Filter/filterSlice";
 
 export const rootReducer = combineReducers({
   [filterSlice.name]: filterSlice.reducer,
@@ -18,6 +18,11 @@ export const setupStore = (preloadedState?: PreloadedState<AppState>) => {
     reducer: rootReducer,
     preloadedState,
     devTools: true,
+    middleware: (getDefaultMiddleware) =>
+      getDefaultMiddleware({
+        immutableCheck: { warnAfter: 128 },
+        serializableCheck: { warnAfter: 128 },
+      }),
   });
 };
 

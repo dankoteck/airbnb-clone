@@ -1,8 +1,7 @@
-import { act, render, screen } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
 import Modal from "../Modal";
-import { mockDelay } from "~/utils/test-utils";
 
 describe("Modal", () => {
   it("should render with children text inside", () => {
@@ -94,13 +93,9 @@ describe("Modal", () => {
       name: /Ok/i,
     });
 
-    act(() => {
-      userEvent.click(element);
-    });
+    await userEvent.click(element);
 
-    await mockDelay(500);
-
-    expect(jestFn).toHaveBeenCalledTimes(1);
+    await waitFor(() => expect(jestFn).toHaveBeenCalledTimes(1));
   });
 
   it('should invoke "onCancel" callback when click on "Cancel" button', async () => {
@@ -116,12 +111,8 @@ describe("Modal", () => {
       name: /Cancel/i,
     });
 
-    act(() => {
-      userEvent.click(element);
-    });
+    await userEvent.click(element);
 
-    await mockDelay(500);
-
-    expect(jestFn).toHaveBeenCalledTimes(1);
+    await waitFor(() => expect(jestFn).toHaveBeenCalledTimes(1));
   });
 });

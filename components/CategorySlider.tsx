@@ -1,7 +1,9 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from "react-icons/md";
+import { MdKeyboardArrowLeft } from "@react-icons/all-files/md/MdKeyboardArrowLeft";
+import { MdKeyboardArrowRight } from "@react-icons/all-files/md/MdKeyboardArrowRight";
+
 import SwiperCore, { SwiperOptions } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import categories from "~/data/categories";
@@ -77,7 +79,7 @@ export default function CategorySlider({
         aria-label="Previous slide"
         className={`${
           isBeginning ? "!opacity-0" : "!opacity-100"
-        } z-50 absolute top-[15%] hidden md:block left-0 hover:shadow-lg bg-white p-1 rounded-full border border-slate-200 hover:border-slate-300 transition duration-300`}
+        } z-10 absolute top-[15%] hidden md:block left-0 hover:shadow-lg bg-white p-1 rounded-full border border-slate-200 hover:border-slate-300 transition duration-300`}
       >
         <MdKeyboardArrowLeft className="w-5 h-5 font-semibold" />
       </button>
@@ -88,7 +90,7 @@ export default function CategorySlider({
         aria-label="Next slide"
         className={`${
           isEnd ? "!opacity-0" : "!opacity-100"
-        } z-50 absolute top-[15%] hidden md:block left-auto right-0 hover:shadow-lg bg-white p-1 rounded-full border border-slate-200 hover:border-slate-300 transition duration-300`}
+        } z-10 absolute top-[15%] hidden md:block left-auto right-0 hover:shadow-lg bg-white p-1 rounded-full border border-slate-200 hover:border-slate-300 transition duration-300`}
       >
         <MdKeyboardArrowRight className="w-5 h-5 font-semibold" />
       </button>

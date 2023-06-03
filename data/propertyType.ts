@@ -1,7 +1,7 @@
-import { BsHouse } from "react-icons/bs";
-import { BiBuildings } from "react-icons/bi";
-import { MdOutlineWarehouse } from "react-icons/md";
-import { HiOutlineBuildingOffice } from "react-icons/hi2";
+import { BsHouse } from "@react-icons/all-files/bs/BsHouse";
+import { BiBuildings } from "@react-icons/all-files/bi/BiBuildings";
+import { MdOutlineWarehouse } from "@react-icons/all-files/md/MdOutlineWarehouse";
+import { HiOutlineBuildingOffice } from "@react-icons/all-files/hi2/HiOutlineBuildingOffice";
 
 const data = [
   {

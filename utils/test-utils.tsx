@@ -30,11 +30,6 @@ export function renderWithRedux(
   return { store, ...render(ui, { wrapper: Wrapper, ...renderOptions }) };
 }
 
-export const mockDelay = (delay: number): Promise<string> =>
-  new Promise((resolve) => {
-    setTimeout(resolve, delay);
-  });
-
 type SetStateMock<S> = (newState: S | ((prevState: S) => S)) => void;
 
 export function mockUseState<T>(initialState: T): [T, SetStateMock<T>] {

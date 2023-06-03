@@ -1,5 +1,4 @@
 import { act, renderHook, waitFor } from "@testing-library/react";
-import { mockDelay } from "~/utils/test-utils";
 import { useWindowSize } from "../useWindowSize";
 
 describe("windowSize", () => {

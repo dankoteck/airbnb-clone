@@ -1,5 +1,5 @@
 import { ChangeEvent, useState } from "react";
-import { BsCheck } from "react-icons/bs";
+import { BsCheck } from "@react-icons/all-files/bs/BsCheck";
 
 export default function Switch({
   value = false,
