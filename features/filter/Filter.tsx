@@ -1,17 +1,25 @@
 "use client";
 
-import { AdjustmentsHorizontalIcon } from "@heroicons/react/24/outline";
 import { useState } from "react";
+import { AdjustmentsHorizontalIcon } from "@heroicons/react/24/outline";
+
 import Modal from "~/components/Modal";
-import TypeOfPlace from "./sections/TypeOfPlace";
-import PriceRange from "./sections/PriceRange";
-import RoomsAndBeds from "./sections/RoomsAndBeds";
-import PropertyType from "./sections/PropertyType";
-import Amenities from "./sections/Amentites";
-import BookingOptions from "./sections/BookingOptions";
-import AccessibilityFeatures from "./sections/AccessibilityFeatures";
-import TopTierStays from "./sections/TopTierStays";
-import HostLanguage from "./sections/HostLanguage";
+
+import {
+  accessibilityFeaturesData,
+  amentitiesData,
+  bookingOptionsData,
+  hostLanguagesData,
+  topTierStaysData,
+} from "~/data";
+
+import TypeOfPlace from "./TypeOfPlace";
+import PriceRange from "./PriceRange";
+import RoomsAndBeds from "./RoomsAndBeds";
+import PropertyType from "./PropertyType";
+
+import CheckboxList from "./common/CheckboxList";
+import SwitchList from "./common/SwitchList";
 
 export default function Filter() {
   const [open, setOpen] = useState(false);
@@ -54,11 +62,14 @@ export default function Filter() {
           <PriceRange />
           <RoomsAndBeds />
           <PropertyType />
-          <Amenities />
-          <BookingOptions />
-          <AccessibilityFeatures />
-          <TopTierStays />
-          <HostLanguage />
+          <CheckboxList title="Amentities" data={amentitiesData} />
+          <SwitchList title="Booking options" data={bookingOptionsData} />
+          <CheckboxList
+            title="Accessibility features"
+            data={accessibilityFeaturesData}
+          />
+          <SwitchList title="Top tier stays" data={topTierStaysData} />
+          <CheckboxList title="Host language" data={hostLanguagesData} />
         </div>
       </Modal>
     </>

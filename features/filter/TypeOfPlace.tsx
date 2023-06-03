@@ -1,5 +1,5 @@
 import { useAppDispatch, useAppSelector } from "~/store";
-import { selectFilter, updateTypeOfPlace } from "../filterSlice";
+import { selectFilter, updateTypeOfPlace } from "./filterSlice";
 import { LottieOptions, useLottie } from "lottie-react";
 import allOfBuildings from "~/assets/lotties/all-types.json";
 import rooms from "~/assets/lotties/rooms.json";

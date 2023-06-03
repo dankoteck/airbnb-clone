@@ -1,4 +1,4 @@
-const accessibilityFeaturesData = [
+const data = [
   {
     label: "Guest entrance and parking",
     groupBy: "guest-entrance-and-parking",
@@ -50,4 +50,4 @@ const accessibilityFeaturesData = [
   },
 ];
 
-export default accessibilityFeaturesData;
+export default data;
