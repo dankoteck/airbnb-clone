@@ -19,7 +19,7 @@ export default function Home() {
 
       <ClientOnly>
         <ReduxProvider>
-          <div className="w-full">
+          <div className="w-full px-8">
             <Header />
 
             {/* 83px for Appbar, 81px for CategorySlider */}

@@ -10,9 +10,9 @@ import categories from "~/data/categories";
 
 const ANIMATING_SPEED: number = 800; // in milisecond
 const BREAKPOINTS: SwiperOptions["breakpoints"] = {
-  // Small screen
-  820: {
-    slidesPerView: 7,
+  // XSmall screen
+  650: {
+    slidesPerView: 6,
     slidesPerGroup: 3,
   },
   // Medium screen
@@ -53,7 +53,7 @@ export default function CategorySlider({
     <div className="relative w-full min-w-0 px-4 md:p-0">
       <Swiper
         updateOnWindowResize
-        slidesPerView={7}
+        slidesPerView={5} // default for small screen
         speed={ANIMATING_SPEED}
         breakpoints={BREAKPOINTS}
         onBeforeInit={(swiper) => (ref.current = swiper)}

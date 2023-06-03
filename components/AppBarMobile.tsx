@@ -2,10 +2,15 @@ import {
   AdjustmentsHorizontalIcon,
   MagnifyingGlassIcon,
 } from "@heroicons/react/24/outline";
+import useScrollOffset from "~/hooks/useScrollOffset";
 
 export default function AppBarMobile() {
+  // const scrollPosition = useScrollOffset();
+
   return (
-    <div className="max-w-3xl p-4 pb-0 mx-auto md:hidden">
+    <div
+      className={`fixed top-0 z-20 bg-white left-0 w-full max-w-3xl p-4 mx-auto md:hidden`}
+    >
       <div className="flex items-center justify-between w-full p-2 bg-white border rounded-full shadow-md border-slate-100 md:hidden">
         <div className="flex items-center gap-2">
           <MagnifyingGlassIcon

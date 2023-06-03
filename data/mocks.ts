@@ -66,4 +66,4 @@ const data = {
   ],
 };
 
-export default Array.from({ length: 30 }, () => data);
+export default Array.from({ length: 15 }, () => data);

@@ -72,7 +72,11 @@ export default function Gallery({
                 className="object-cover object-center w-full h-full rounded-xl"
               />
             </div>
-            <button onClick={onSaveToList} className="absolute top-4 right-4">
+            <button
+              onClick={onSaveToList}
+              aria-label="Save to list"
+              className="absolute top-4 right-4"
+            >
               <AirbnbHeartIcon />
             </button>
           </SwiperSlide>

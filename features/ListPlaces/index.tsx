@@ -1,5 +1,10 @@
+"use client";
+
 import { AiFillStar } from "@react-icons/all-files/ai/AiFillStar";
 import dayjs from "dayjs";
+
+import { FixedSizeList as List } from "react-window";
+import AutoSizer from "react-virtualized-auto-sizer";
 
 import { mocksData } from "~/data";
 import Gallery from "./Gallery";
@@ -9,7 +14,24 @@ const SHORT_DATE_FORMAT = "MMM DD";
 
 export default function ListPlaces() {
   return (
-    <div role="list" className="grid grid-cols-5 gap-x-6 gap-y-12">
+    <div
+      role="list"
+      className="grid min-h-full grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-x-6 gap-y-12"
+    >
+      {/* <AutoSizer>
+        {({ height, width }: { height: number; width: number }) => (
+          <List
+            className="List"
+            height={height}
+            itemCount={1000}
+            itemSize={35}
+            width={width}
+          >
+            {({ index, style }) => <div style={style}>Row {index + 1}</div>}
+          </List>
+        )}
+      </AutoSizer> */}
+
       {mocksData.map((item, index) => (
         <div
           className="flex flex-col w-full gap-2"

@@ -1,24 +1,11 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import CategorySlider from "~/components/CategorySlider";
 import Filter from "~/features/Filter";
+import useScrollOffset from "~/hooks/useScrollOffset";
 
 export default function Header() {
-  const [scrollPosition, setScrollPosition] = useState(0);
-
-  const handleScroll = () => {
-    const position = window.scrollY;
-    setScrollPosition(position);
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll, { passive: true });
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+  const scrollPosition = useScrollOffset();
 
   return (
     <div
