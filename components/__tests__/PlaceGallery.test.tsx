@@ -1,6 +1,6 @@
 import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
-import Gallery from "../Gallery";
+import PlaceGallery from "../PlaceGallery";
 
 const mockData = [
   { href: "https://picsum.photos/200/300", alt: "Image 1" },
@@ -10,7 +10,7 @@ const mockData = [
 
 describe("Gallery", () => {
   it("should render the gallery items", () => {
-    render(<Gallery data={mockData} id="123" />);
+    render(<PlaceGallery data={mockData} id="123" />);
 
     // Find the gallery items
     const galleryItems = screen.getAllByRole("figure");
@@ -22,7 +22,9 @@ describe("Gallery", () => {
   it('should invoke "onSlideChange" callback when slide change', async () => {
     const onSlideChange = jest.fn();
 
-    render(<Gallery data={mockData} id="123" onSlideChange={onSlideChange} />);
+    render(
+      <PlaceGallery data={mockData} id="123" onSlideChange={onSlideChange} />
+    );
 
     // Assert when clicking next arrow
     const nextArrow = screen.getByRole("button", {

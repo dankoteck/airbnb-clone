@@ -1,11 +1,22 @@
+"use client";
+
 import {
   AdjustmentsHorizontalIcon,
   MagnifyingGlassIcon,
 } from "@heroicons/react/24/outline";
-import useScrollOffset from "~/hooks/useScrollOffset";
+import { useState } from "react";
+import AirbnbFilterModal from "./AirbnbFilterModal";
 
 export default function AppBarMobile() {
-  // const scrollPosition = useScrollOffset();
+  const [open, setOpen] = useState(false);
+
+  const onOpen = () => {
+    setOpen(true);
+  };
+
+  const onCancel = () => {
+    setOpen(false);
+  };
 
   return (
     <div
@@ -27,11 +38,14 @@ export default function AppBarMobile() {
         </div>
 
         <button
+          onClick={onOpen}
           aria-label="Filter"
           className="p-1.5 border rounded-full border-slate-200"
         >
           <AdjustmentsHorizontalIcon className="w-6 h-6" />
         </button>
+
+        <AirbnbFilterModal open={open} onCancel={onCancel} />
       </div>
     </div>
   );

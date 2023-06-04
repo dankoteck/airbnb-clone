@@ -1,6 +1,7 @@
-import { useAppDispatch, useAppSelector } from "~/store";
-import { selectFilter, updateTypeOfPlace } from "./filterSlice";
 import { LottieOptions, useLottie } from "lottie-react";
+
+import { useAppDispatch, useAppSelector } from "~/store";
+import { selectFilter, updateTypeOfPlace } from "~/slices/filterSlice";
 import allOfBuildings from "~/assets/lotties/all-types.json";
 import rooms from "~/assets/lotties/rooms.json";
 import homes from "~/assets/lotties/homes.json";
@@ -52,7 +53,7 @@ export default function TypeOfPlace() {
   };
 
   return (
-    <div className="flex items-center gap-0 overflow-hidden">
+    <div className="items-center hidden gap-0 overflow-hidden md:flex">
       <div className="flex flex-col flex-1 min-w-0 py-4 gap-y-4">
         <h2 className="mb-2 text-2xl font-semibold">Type of place</h2>
 

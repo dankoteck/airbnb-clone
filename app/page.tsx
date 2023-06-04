@@ -4,8 +4,8 @@ import ClientOnly from "~/components/ClientOnly";
 import Introducing from "~/components/Introducing";
 import ReduxProvider from "~/components/ReduxProvider";
 
-import ListPlaces from "~/features/ListPlaces";
 import Header from "./Header";
+import Content from "./Content";
 
 export default function Home() {
   return (
@@ -14,18 +14,14 @@ export default function Home() {
 
       <AppBar />
 
-      {/* Show when window sreen size is < 640px */}
-      <AppBarMobile />
-
       <ClientOnly>
         <ReduxProvider>
-          <div className="w-full px-8">
-            <Header />
+          {/* Show when window sreen size is < 640px */}
+          <AppBarMobile />
 
-            {/* 83px for Appbar, 81px for CategorySlider */}
-            <div className="py-4 mx-auto mt-[calc(83px+82px)] lg:max-w-screen-2xl md:py-6 md:px-3.5 px-0">
-              <ListPlaces />
-            </div>
+          <div className="w-full px-8 sm:px-0">
+            <Header />
+            <Content />
           </div>
         </ReduxProvider>
       </ClientOnly>

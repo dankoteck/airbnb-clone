@@ -1,6 +1,7 @@
 import { useState } from "react";
+import { useWindowSize } from "~/hooks/useWindowSize";
 
-function SelectOption({ label }: { label: string }) {
+function Option({ label }: { label: string }) {
   const [selected, setSelected] = useState<number>(0);
 
   const onChooseOption = (num: number) => {
@@ -39,13 +40,20 @@ function SelectOption({ label }: { label: string }) {
 }
 
 export default function RoomsAndBeds() {
+  const { width } = useWindowSize();
+  const list = ["Bedrooms", "Beds", "Bathrooms"];
+
   return (
     <div className="w-full py-8 space-y-6 border-t border-t-slate-200">
-      <h2 className="mb-6 text-2xl font-semibold">Rooms and beds</h2>
+      <h2 className="mb-6 text-xl font-semibold md:text-2xl">
+        {width! > 768 ? "Rooms and beds" : "Beds and bathrooms"}
+      </h2>
 
-      {["Bedrooms", "Beds", "Bathrooms"].map((label) => (
-        <SelectOption label={label} key={label} />
-      ))}
+      {list.map((label) => {
+        if (width! < 768 && label === "Bedrooms") return null;
+
+        return <Option label={label} key={label} />;
+      })}
     </div>
   );
 }

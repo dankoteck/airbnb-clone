@@ -9,6 +9,7 @@ import { Bar } from "react-chartjs-2";
 import { Handles, Rail, Slider, Tracks } from "react-compound-slider";
 import OutlinedInput from "~/components/OutlinedInput";
 import { usePriceRange } from "~/hooks/usePriceRange";
+import { useWindowSize } from "~/hooks/useWindowSize";
 
 ChartJS.register(BarElement, CategoryScale, LinearScale);
 
@@ -78,6 +79,7 @@ function BarChart({
 // I'm just trying to get it to work
 // Reference: https://codesandbox.io/s/rangeslider-with-histogram-voos8?file=/src/RangeSlider.js
 export default function PriceRange() {
+  const { width } = useWindowSize();
   const { data, range, selected, input, slider, onInputChange } =
     usePriceRange();
 
@@ -91,9 +93,17 @@ export default function PriceRange() {
   };
 
   return (
-    <div className="w-full py-8 border-t border-t-slate-200">
-      <h2 className="mb-6 text-2xl font-semibold">Price range</h2>
-      <div className="max-w-[calc(42rem-28px)] mx-auto mb-12 max-h-20">
+    <div className="w-full py-8 border-t-0 md:border-t md:border-t-slate-200">
+      <h2 className="mb-0 text-xl font-semibold md:text-2xl md:mb-6">
+        Price range
+      </h2>
+      {width! < 768 && (
+        <p className="text-base font-light text-gray-700">
+          {/* Hard code for $70 right now */}
+          The average nightly price is $70, not including fees or taxes.
+        </p>
+      )}
+      <div className="max-w-[calc(42rem-28px)] mt-6 md:mt-0 mx-auto mb-12 max-h-40 md:max-h-20">
         <BarChart data={data} range={range} selected={selectedRange} />
         <Slider
           mode={3}

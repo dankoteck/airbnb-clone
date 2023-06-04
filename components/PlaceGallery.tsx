@@ -55,20 +55,25 @@ export default function Gallery({
         onSlideChange={handleSlideChange}
         pagination={{
           renderBullet(_, className) {
-            return `<span role="button" aria-label="dot" class="${className} !w-1.5 !h-1.5 bg-white !mx-0.5"></span>`;
+            return `<span class="${className} !w-1.5 !h-1.5 bg-white !mx-0.5"></span>`;
           },
         }}
         modules={[Pagination]}
       >
         {data.map((item) => (
           <SwiperSlide key={`${item.href}-${item.alt}`}>
-            <div className="aspect-w-1 aspect-h-1" role="figure">
+            <div
+              className="aspect-square"
+              role="figure"
+              aria-labelledby={item.alt}
+            >
               <Image
                 fill
                 priority
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                id={item.alt}
                 src={item.href}
                 alt={item.alt ?? "No image provided"}
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className="object-cover object-center w-full h-full rounded-xl"
               />
             </div>

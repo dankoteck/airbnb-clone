@@ -1,11 +1,11 @@
 import { render, screen } from "@testing-library/react";
-import ListPlaces from "..";
+import Content from "../Content";
 import { mocksData } from "~/data";
 import dayjs from "dayjs";
 
 describe("ListPlaces", () => {
   it("should render the list of places", () => {
-    render(<ListPlaces />);
+    render(<Content />);
 
     // Find the list of places
     const placeList = screen.getByRole("list");
@@ -15,7 +15,7 @@ describe("ListPlaces", () => {
   });
 
   it("should render the place information correctly", () => {
-    render(<ListPlaces />);
+    render(<Content />);
 
     // Find the first place
     const firstPlace = screen.getByTestId("place-0");

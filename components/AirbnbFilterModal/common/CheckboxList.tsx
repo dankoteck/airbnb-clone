@@ -36,7 +36,7 @@ export default function CheckboxList({ title, data }: Props) {
           // Hidden all except the first group by default
           className={`${index === 0 || isShowMore ? "block" : "hidden"} ${
             group.label === "" ? "mt-6" : ""
-          } grid w-full grid-cols-2 text-sm font-medium bg-white rounded-lg`}
+          } grid w-full grid-cols-1 md:grid-cols-2 text-sm font-medium bg-white rounded-lg`}
         >
           {/* If label is empty that's mean no grouped, then don't need to render title */}
           {group.label !== "" && (
